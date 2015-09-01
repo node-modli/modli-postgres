@@ -1,4 +1,6 @@
-**BADGES GO HERE**
+[![wercker status](https://app.wercker.com/status/74461495df913d3524f2a11c9db4cd9b/s/master "wercker status")](https://app.wercker.com/project/bykey/74461495df913d3524f2a11c9db4cd9b)
+[![Code Climate](https://codeclimate.com/github/node-modli/modli-postgres/badges/gpa.svg)](https://codeclimate.com/github/node-modli/modli-postgres)
+[![Test Coverage](https://codeclimate.com/github/node-modli/modli-postgres/badges/coverage.svg)](https://codeclimate.com/github/node-modli/modli-postgres/coverage)
 
 > # ATTENTION: In Development
 
