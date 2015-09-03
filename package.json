@@ -41,7 +41,8 @@
     "should": "^7.0.2"
   },
   "dependencies": {
-    "bluebird": "^2.9.34"
+    "bluebird": "^2.9.34",
+    "pg": "^4.4.1"
   },
   "pre-commit": [
     "lint",
