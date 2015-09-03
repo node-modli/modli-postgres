@@ -6,9 +6,12 @@ services:
 build:
   steps:
     - script:
-        name: dynamodb config
+        name: postgres config
         code: |
-          export MODLI_DYNAMODB_HOST=http://${DYNAMODB_PORT_8000_TCP_ADDR}:${DYNAMODB_PORT_8000_TCP_PORT}
+          export MODLI_POSTGRES_HOST=${POSTGRES_PORT_5432_TCP_ADDR}
+          export MODLI_POSTGRES_USERNAME=${POSTGRES_ENV_POSTGRES_USER}
+          export MODLI_POSTGRES_PASSWORD=${POSTGRES_ENV_POSTGRES_PASSWORD}
+          export MODLI_POSTGRES_DATABASE=${POSTGRES_ENV_POSTGRES_USER}
     - script:
         name: echo env
         code: |
@@ -30,7 +33,7 @@ build:
         name: build
         code: |
           make build
-          
+
   after-steps:
     # Run and report coverage
     - script:
