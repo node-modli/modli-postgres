@@ -69,7 +69,7 @@ Allows for passing standard PostgreSQL queries:
 postgresTest.query('SELECT * FROM tblFoo')
   .then(/*...*/)
   .catch(/*...*/);
-```postgresTest
+```
 
 ### `createTable`
 
