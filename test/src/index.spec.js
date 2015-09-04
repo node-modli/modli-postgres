@@ -13,6 +13,21 @@ const config = {
 const testInstance = new postgres(config);
 testInstance.tableName = 'foo';
 
+// Mock validation method, this is automatically done by the model
+testInstance.validate = (body) => {
+  // Test validation failure by passing `failValidate: true`
+  if (body.failValidate) {
+    return { error: true };
+  }
+  // Mock passing validation, return null
+  return null;
+};
+
+// Mock sanitize method, this is automatically done by the model
+testInstance.sanitize = (body) => {
+  return body;
+};
+
 describe('postgres', () => {
   after((done) => {
     testInstance.query(`DROP TABLE ${testInstance.tableName};`)
@@ -64,6 +79,99 @@ describe('postgres', () => {
         done();
       })
       .catch((err) =>  done(err));
+    });
+  });
+
+  describe('create', () => {
+    it('fails when validation does not pass', (done) => {
+      testInstance.create({
+        failValidate: true
+      })
+      .catch((err) => {
+        expect(err).to.have.property('error');
+        done();
+      });
+    });
+    it('creates a new record based on object passed', (done) => {
+      testInstance.create({
+        fname: 'John',
+        lname: 'Smith',
+        email: 'jsmith@gmail.com'
+      })
+      .then((result) => {
+        expect(result.insertId).to.be.a.number;
+        done();
+      })
+      .catch((err) =>  done(err));
+    });
+  });
+
+  describe('read', () => {
+    it('reads all when no query specified', (done) => {
+      testInstance.read()
+        .then((result) => {
+          expect(result).to.be.an.array;
+          done();
+        })
+        .catch((err) =>  done(err));
+    });
+    it('reads specific records when query supplied', (done) => {
+      testInstance.read('fname=\'John\'', 1)
+        .then((result) => {
+          expect(result).to.be.an.array;
+          done();
+        })
+        .catch((err) =>  done(err));
+    });
+    it('fails when a bad query is provided', (done) => {
+      testInstance.read('`fart=`knocker')
+        .catch((err) => {
+          expect(err).to.be.an.instanceof(Error);
+          done();
+        });
+    });
+  });
+
+  describe('update', () => {
+    it('fails when validation does not pass', (done) => {
+      testInstance.update({}, {
+        failValidate: true
+      })
+      .catch((err) => {
+        expect(err).to.have.property('error');
+        done();
+      });
+    });
+    it('updates record(s) based on query and body', (done) => {
+      testInstance.update('fname=\'John\'', {
+        fname: 'Bob',
+        email: 'bsmith@gmail.com'
+      }, 1)
+        .then(() => {
+          done();
+        })
+        .catch((err) => done(err));
+    });
+  });
+
+  describe('delete', () => {
+    it('deletes record(s) based on query', (done) => {
+      testInstance.delete('fname=\'Bob\'')
+        .then(() => {
+          done();
+        })
+        .catch((err) => done(err));
+    });
+  });
+
+  describe('extend', () => {
+    it('extends the adapter with a custom method', () => {
+      // Extend
+      testInstance.extend('sayFoo', () => {
+        return 'foo';
+      });
+      // Execute
+      expect(testInstance.sayFoo()).to.equal('foo');
     });
   });
 });
