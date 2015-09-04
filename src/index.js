@@ -83,9 +83,9 @@ export default class {
         let vals = [];
         for (let prop in body) {
           cols.push(prop);
-          vals.push('"' + body[prop] + '"');
+          vals.push('\'' + body[prop] + '\'');
         }
-        const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES ('${vals.join('\',\'')}');`;
+        const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')});`;
         // Run query
         resolve(this.query(query));
       }
