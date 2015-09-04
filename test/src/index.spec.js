@@ -13,16 +13,16 @@ describe('postgres', () => {
 
   describe('query', () => {
     it('fails when a bad connection config is passed', (done) => {
-      const testConstruct = new postgres({});
-      testConstruct.query('')
+      const testPostgres = new postgres({});
+      testPostgres.query('')
         .catch((err) => {
           expect(err).to.be.an.object;
           done();
         });
     });
     it('fails when an invalid query is run', (done) => {
-      const testConstruct = new postgres(config);
-      testConstruct.query('`')
+      const testPostgres = new postgres(config);
+      testPostgres.query('`')
         .catch((err) => {
           expect(err).to.be.an.object;
           expect(err.name).to.equal('error');
@@ -30,8 +30,8 @@ describe('postgres', () => {
         });
     });
     it('runs a query against the database when connection is good', (done) => {
-      const testConstruct = new postgres(config);
-      testConstruct.query('SELECT 1 + 1 AS number')
+      const testPostgres = new postgres(config);
+      testPostgres.query('SELECT 1 + 1 AS number')
         .then((result) => {
           expect(result[0].number).to.equal(2);
           done();
