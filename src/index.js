@@ -35,7 +35,7 @@ export default class {
             if (e) {
               reject(e);
             } else {
-              resolve(result.rows);
+              resolve(result);
             }
           });
         }
@@ -108,7 +108,7 @@ export default class {
       return this.query(`SELECT * FROM ${this.tableName}${where}`)
         .then((results) => {
           let tmp = [];
-          results.forEach((r) => {
+          results.rows.forEach((r) => {
             tmp.push(this.sanitize(r, version));
           });
           resolve(tmp);

@@ -28,6 +28,13 @@ testInstance.sanitize = (body) => {
   return body;
 };
 
+// Test record
+const testData = {
+  fname: 'John',
+  lname: 'Smith',
+  email: 'jsmith@gmail.com'
+};
+
 describe('postgres', () => {
   after((done) => {
     testInstance.query(`DROP TABLE ${testInstance.tableName};`)
@@ -59,7 +66,7 @@ describe('postgres', () => {
       const testPostgres = new postgres(config);
       testPostgres.query('SELECT 1 + 1 AS number')
         .then((result) => {
-          expect(result[0].number).to.equal(2);
+          expect(result.rows[0].number).to.equal(2);
           done();
         })
         .catch((err) => done(err));
@@ -93,13 +100,9 @@ describe('postgres', () => {
       });
     });
     it('creates a new record based on object passed', (done) => {
-      testInstance.create({
-        fname: 'John',
-        lname: 'Smith',
-        email: 'jsmith@gmail.com'
-      })
+      testInstance.create(testData)
       .then((result) => {
-        expect(result.insertId).to.be.a.number;
+        expect(result.rowCount).to.be.a.number;
         done();
       })
       .catch((err) =>  done(err));
@@ -111,6 +114,7 @@ describe('postgres', () => {
       testInstance.read()
         .then((result) => {
           expect(result).to.be.an.array;
+          expect(result[0].email).to.equal(testData.email);
           done();
         })
         .catch((err) =>  done(err));
@@ -147,7 +151,8 @@ describe('postgres', () => {
         fname: 'Bob',
         email: 'bsmith@gmail.com'
       }, 1)
-        .then(() => {
+        .then((result) => {
+          expect(result.rowCount).to.equal(1);
           done();
         })
         .catch((err) => done(err));
@@ -157,7 +162,8 @@ describe('postgres', () => {
   describe('delete', () => {
     it('deletes record(s) based on query', (done) => {
       testInstance.delete('fname=\'Bob\'')
-        .then(() => {
+        .then((result) => {
+          expect(result.rowCount).to.equal(1);
           done();
         })
         .catch((err) => done(err));
