@@ -5,6 +5,7 @@ report
 coverage
 docs
 .c9/
+.idea/
 _builds/
 _projects/
 _steps/
