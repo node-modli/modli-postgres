@@ -71,7 +71,6 @@ var _default = (function () {
 
     /**
      * Creates a table
-     * @memberof mysql
      * @param {String} name The name of the table to create
      * @param {Object} props The properties of the table
      * @returns {Object} promise
@@ -203,7 +202,7 @@ var _default = (function () {
     }
 
     /**
-     * Extends the mysql object
+     * Extends the postgres object
      * @param {String} name The name of the method
      * @param {Function} fn The function to extend on the object
      */
