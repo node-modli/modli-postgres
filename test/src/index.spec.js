@@ -3,20 +3,24 @@
 import '../setup';
 import postgres from '../../src/index';
 
+const config = {
+  host: process.env.MODLI_POSTGRES_HOST,
+  username: process.env.MODLI_POSTGRES_USERNAME,
+  password: process.env.MODLI_POSTGRES_PASSWORD,
+  database: process.env.MODLI_POSTGRES_DATABASE
+};
+
+const testInstance = new postgres(config);
+testInstance.tableName = 'foo';
+
 describe('postgres', () => {
-  after(() => {
-
+  after((done) => {
+    testInstance.query(`DROP TABLE ${testInstance.tableName};`)
+      .then(() => {
+        done();
+      })
+      .catch(done);
   });
-
-  const config = {
-    host: process.env.MODLI_POSTGRES_HOST,
-    username: process.env.MODLI_POSTGRES_USERNAME,
-    password: process.env.MODLI_POSTGRES_PASSWORD,
-    database: process.env.MODLI_POSTGRES_DATABASE
-  };
-
-  const testInstance = new postgres(config);
-  testInstance.tableName = 'foo';
 
   describe('query', () => {
     it('fails when a bad connection config is passed', (done) => {
