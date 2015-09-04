@@ -4,12 +4,19 @@ import '../setup';
 import postgres from '../../src/index';
 
 describe('postgres', () => {
+  after(() => {
+
+  });
+
   const config = {
     host: process.env.MODLI_POSTGRES_HOST,
     username: process.env.MODLI_POSTGRES_USERNAME,
     password: process.env.MODLI_POSTGRES_PASSWORD,
     database: process.env.MODLI_POSTGRES_DATABASE
   };
+
+  const testInstance = new postgres(config);
+  testInstance.tableName = 'foo';
 
   describe('query', () => {
     it('fails when a bad connection config is passed', (done) => {
@@ -37,6 +44,22 @@ describe('postgres', () => {
           done();
         })
         .catch((err) => done(err));
+    });
+  });
+
+  describe('createTable', () => {
+    it('creates a new table based on object passed (if not exists)', (done) => {
+      testInstance.createTable({
+        'id': [ 'serial', 'NOT NULL', 'PRIMARY KEY'],
+        'fname': [ 'varchar(255)' ],
+        'lname': [ 'varchar(255)' ],
+        'email': [ 'varchar(255)' ]
+      })
+      .then((result) => {
+        expect(result).to.be.an.object;
+        done();
+      })
+      .catch((err) =>  done(err));
     });
   });
 });

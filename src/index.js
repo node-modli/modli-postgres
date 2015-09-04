@@ -7,7 +7,6 @@ import pg from 'pg';
 export default class {
   /**
    * Creates the connection string for the instance
-   * @memberof postgres
    * @param {Object} config
    * @property {String} config.host The host to connect to
    * @property {String} config.username The connection username
@@ -20,7 +19,6 @@ export default class {
 
   /**
    * Runs query against instance conn
-   * @memberof postgres
    * @param {String} query The query to execute
    * @returns {Object} promise
    */
@@ -43,6 +41,28 @@ export default class {
         }
       });
     });
+  }
+
+  /**
+   * Creates a table
+   * @memberof mysql
+   * @param {String} name The name of the table to create
+   * @param {Object} props The properties of the table
+   * @returns {Object} promise
+   */
+  createTable (props) {
+    // Build query
+    const len = Object.keys(props).length;
+    let i = 1;
+    let query = `CREATE TABLE IF NOT EXISTS ${this.tableName} (`;
+    for (let prop in props) {
+      let comma = (i !== len) ? ', ' : '';
+      query += `${prop} ${props[prop].join(' ')}${comma}`;
+      i++;
+    }
+    query += ');';
+    // Run query
+    return this.query(query);
   }
 
 }
