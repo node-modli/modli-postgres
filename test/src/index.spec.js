@@ -17,7 +17,6 @@ describe('postgres', () => {
       testConstruct.query('')
         .catch((err) => {
           expect(err).to.be.an.object;
-          expect(err.code).to.equal('ECONNREFUSED');
           done();
         });
     });
