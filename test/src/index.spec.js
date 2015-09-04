@@ -14,10 +14,21 @@ describe('postgres', () => {
   describe('query', () => {
     it('fails when a bad connection config is passed', (done) => {
       const testConstruct = new postgres({});
-      testConstruct.query('').catch((e) => {
-        expect(e).to.be.instanceof(Error);
-        done();
-      });
+      testConstruct.query('')
+        .catch((err) => {
+          expect(err).to.be.an.object;
+          expect(err.code).to.equal('ECONNREFUSED');
+          done();
+        });
+    });
+    it('fails when an invalid query is run', (done) => {
+      const testConstruct = new postgres(config);
+      testConstruct.query('`')
+        .catch((err) => {
+          expect(err).to.be.an.object;
+          expect(err.name).to.equal('error');
+          done();
+        });
     });
     it('runs a query against the database when connection is good', (done) => {
       const testConstruct = new postgres(config);

@@ -21,7 +21,7 @@ export default class {
             done();
             // Process
             if (e) {
-              throw new Error(e);
+              reject(e);
             } else {
               resolve(result.rows);
             }
