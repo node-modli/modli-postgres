@@ -1,5 +1,4 @@
 dockerfiles
-test
-src
 .gitignore
 .jshintrc
+coverage

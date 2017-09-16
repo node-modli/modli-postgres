@@ -23,9 +23,12 @@ tasks:
   mocha: |
     node ./scripts/postgres_conn.js
     yarn run mocha
-  test: yarn run test
-  cover: yarn run cover
+  test: |
+    node ./scripts/postgres_conn.js
+    yarn run test
+  cover: |
+    node ./scripts/postgres_conn.js
+    yarn run cover
   lint:
     disable: '*'
     cmd: yarn run lint
-  build: yarn run build
