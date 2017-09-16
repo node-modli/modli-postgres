@@ -1,0 +1,35 @@
+from: technologyadvice/node-build:6
+services:
+  - postgres:
+      from: postgres
+      env:
+        - POSTGRES_USER=test
+        - POSTGRES_PASSWORD=test
+        - POSTGRES_DB=test
+      expose:
+        - 5432:5432
+env: 
+  - POSTGRES_USER=test
+  - POSTGRES_PASSWORD=test
+  - POSTGRES_DB=test
+volumes:
+  - ${HOME}/:/root
+before: |
+  export MODLI_POSTGRES_HOST=$POSTGRES_PORT_5432_TCP_ADDR
+tasks:
+  env: env | sort
+  clean:
+    disable: '*'
+    cmd: yarn run clean
+  install:
+    disable: '*'
+    cmd: yarn install
+  mocha: |
+    node ./scripts/postgres_conn.js
+    yarn run mocha
+  test: yarn run test
+  cover: yarn run cover
+  lint:
+    disable: '*'
+    cmd: yarn run lint
+  build: yarn run build
