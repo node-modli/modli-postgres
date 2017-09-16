@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz",
+    "hash": "4a5282ac164729e93619bcfd3ad151f817ce91f5",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4a5282ac164729e93619bcfd3ad151f817ce91f5"
+}

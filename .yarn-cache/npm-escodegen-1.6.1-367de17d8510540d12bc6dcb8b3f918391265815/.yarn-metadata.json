@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/escodegen/-/escodegen-1.6.1.tgz#367de17d8510540d12bc6dcb8b3f918391265815",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/escodegen/-/escodegen-1.6.1.tgz",
+    "hash": "367de17d8510540d12bc6dcb8b3f918391265815",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "367de17d8510540d12bc6dcb8b3f918391265815"
+}

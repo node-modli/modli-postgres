@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "name": "should-type-adaptors",
+    "version": "1.0.1",
+    "description": "Small utility functions to use the same traversing etc code on different types",
+    "main": "cjs/should-type-adaptors.js",
+    "jsnext:main": "es6/should-type-adaptors.js",
+    "dependencies": {
+      "should-type": "^1.3.0",
+      "should-util": "^1.0.0"
+    },
+    "devDependencies": {
+      "eslint": "^3.2.2",
+      "eslint-config-shouldjs": "^1.0.2",
+      "rollup": "^0.34.7"
+    },
+    "scripts": {
+      "cjs": "rollup --format=cjs --output=cjs/should-type-adaptors.js index.js",
+      "es6": "rollup --format=es --output=es6/should-type-adaptors.js index.js",
+      "build": "npm run --silent cjs && npm run --silent es6",
+      "prepublish": "npm run --silent build",
+      "pretest": "npm run --silent build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/shouldjs/type-adaptors.git"
+    },
+    "keywords": [
+      "shouldjs",
+      "type"
+    ],
+    "author": {
+      "name": "Denis Bardadym",
+      "email": "bardadymchik@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/shouldjs/type-adaptors/issues"
+    },
+    "homepage": "https://github.com/shouldjs/type-adaptors#readme",
+    "files": [
+      "cjs/*",
+      "es6/*",
+      "README.md",
+      "LICENSE"
+    ],
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-should-type-adaptors-1.0.1-efe5553cdf68cff66e5c5f51b712dc351c77beaa/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# type-adaptors",
+    "licenseText": "MIT License\n\nCopyright (c) 2016 Should.js assertion library\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/should-type-adaptors/-/should-type-adaptors-1.0.1.tgz#efe5553cdf68cff66e5c5f51b712dc351c77beaa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/should-type-adaptors/-/should-type-adaptors-1.0.1.tgz",
+    "hash": "efe5553cdf68cff66e5c5f51b712dc351c77beaa",
+    "registry": "npm",
+    "packageName": "should-type-adaptors"
+  },
+  "registry": "npm",
+  "hash": "efe5553cdf68cff66e5c5f51b712dc351c77beaa"
+}

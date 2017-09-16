@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-0.1.3.tgz#da1847b20940e42ee1492beaf65d49d91b245df7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-0.1.3.tgz",
+    "hash": "da1847b20940e42ee1492beaf65d49d91b245df7",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "da1847b20940e42ee1492beaf65d49d91b245df7"
+}

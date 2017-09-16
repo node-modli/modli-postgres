@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-path-cwd/-/is-path-cwd-1.0.0.tgz#d225ec23132e89edd38fda767472e62e65f1106d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-path-cwd/-/is-path-cwd-1.0.0.tgz",
+    "hash": "d225ec23132e89edd38fda767472e62e65f1106d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d225ec23132e89edd38fda767472e62e65f1106d"
+}

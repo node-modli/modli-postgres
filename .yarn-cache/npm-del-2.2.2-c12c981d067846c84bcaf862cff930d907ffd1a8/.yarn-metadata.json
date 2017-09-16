@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/del/-/del-2.2.2.tgz#c12c981d067846c84bcaf862cff930d907ffd1a8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/del/-/del-2.2.2.tgz",
+    "hash": "c12c981d067846c84bcaf862cff930d907ffd1a8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c12c981d067846c84bcaf862cff930d907ffd1a8"
+}

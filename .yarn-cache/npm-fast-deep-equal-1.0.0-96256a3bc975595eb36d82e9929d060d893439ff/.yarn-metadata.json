@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz#96256a3bc975595eb36d82e9929d060d893439ff",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz",
+    "hash": "96256a3bc975595eb36d82e9929d060d893439ff",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "96256a3bc975595eb36d82e9929d060d893439ff"
+}

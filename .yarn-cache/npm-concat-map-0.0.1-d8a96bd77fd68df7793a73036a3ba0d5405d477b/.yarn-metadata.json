@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz",
+    "hash": "d8a96bd77fd68df7793a73036a3ba0d5405d477b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+}

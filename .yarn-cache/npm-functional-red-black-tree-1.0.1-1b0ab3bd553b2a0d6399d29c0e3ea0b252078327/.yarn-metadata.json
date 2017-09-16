@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz",
+    "hash": "1b0ab3bd553b2a0d6399d29c0e3ea0b252078327",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
+}

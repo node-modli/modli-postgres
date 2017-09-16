@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz",
+    "hash": "349a6d44c53a51de89b40805c5d5e59b417d3340",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "349a6d44c53a51de89b40805c5d5e59b417d3340"
+}

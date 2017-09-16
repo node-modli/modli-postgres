@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/esquery/-/esquery-1.0.0.tgz#cfba8b57d7fba93f17298a8a006a04cda13d80fa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/esquery/-/esquery-1.0.0.tgz",
+    "hash": "cfba8b57d7fba93f17298a8a006a04cda13d80fa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "cfba8b57d7fba93f17298a8a006a04cda13d80fa"
+}

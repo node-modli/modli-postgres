@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lodash._basecreate/-/lodash._basecreate-3.0.3.tgz#1bc661614daa7fc311b7d03bf16806a0213cf821",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lodash._basecreate/-/lodash._basecreate-3.0.3.tgz",
+    "hash": "1bc661614daa7fc311b7d03bf16806a0213cf821",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1bc661614daa7fc311b7d03bf16806a0213cf821"
+}

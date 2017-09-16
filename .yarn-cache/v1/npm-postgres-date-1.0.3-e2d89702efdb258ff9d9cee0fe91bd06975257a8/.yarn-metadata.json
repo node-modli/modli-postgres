@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "name": "postgres-date",
+    "main": "index.js",
+    "version": "1.0.3",
+    "description": "Postgres date column parser",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bendrucker/postgres-date.git"
+    },
+    "author": {
+      "name": "Ben Drucker",
+      "email": "bvdrucker@gmail.com",
+      "url": "bendrucker.me"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "standard && tape test.js"
+    },
+    "keywords": [
+      "postgres",
+      "date",
+      "parser"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "tape": "^4.0.0",
+      "standard": "^4.0.0"
+    },
+    "files": [
+      "index.js",
+      "readme.md"
+    ],
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-postgres-date-1.0.3-e2d89702efdb258ff9d9cee0fe91bd06975257a8/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# postgres-date [![Build Status](https://travis-ci.org/bendrucker/postgres-date.svg?branch=master)](https://travis-ci.org/bendrucker/postgres-date)\n\n> Postgres date column parser\n\n\n## Install\n\n```\n$ npm install --save postgres-date\n```\n\n\n## Usage\n\n```js\nvar parse = require('postgres-date')\nparse('2011-01-23 22:15:51Z')\n// => 2011-01-23T22:15:51.000Z\n```\n\n## API\n\n#### `parse(isoDate)` -> `date`\n\n##### isoDate\n\n*Required*  \nType: `string`\n\nA date string from Postgres.\n\n## License\n\nMIT © [Ben Drucker](http://bendrucker.me)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Ben Drucker <bvdrucker@gmail.com> (bendrucker.me)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.3.tgz#e2d89702efdb258ff9d9cee0fe91bd06975257a8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.3.tgz",
+    "hash": "e2d89702efdb258ff9d9cee0fe91bd06975257a8",
+    "registry": "npm",
+    "packageName": "postgres-date"
+  },
+  "registry": "npm",
+  "hash": "e2d89702efdb258ff9d9cee0fe91bd06975257a8"
+}

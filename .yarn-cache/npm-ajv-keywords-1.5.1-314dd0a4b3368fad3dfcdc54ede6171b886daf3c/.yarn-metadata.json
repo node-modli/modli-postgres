@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz",
+    "hash": "314dd0a4b3368fad3dfcdc54ede6171b886daf3c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
+}

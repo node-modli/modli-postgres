@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/jschardet/-/jschardet-1.5.1.tgz#c519f629f86b3a5bedba58a88d311309eec097f9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/jschardet/-/jschardet-1.5.1.tgz",
+    "hash": "c519f629f86b3a5bedba58a88d311309eec097f9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c519f629f86b3a5bedba58a88d311309eec097f9"
+}

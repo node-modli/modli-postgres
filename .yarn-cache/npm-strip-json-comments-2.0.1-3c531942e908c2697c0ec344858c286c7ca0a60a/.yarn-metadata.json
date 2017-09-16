@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz",
+    "hash": "3c531942e908c2697c0ec344858c286c7ca0a60a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3c531942e908c2697c0ec344858c286c7ca0a60a"
+}

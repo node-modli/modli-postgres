@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/get-func-name/-/get-func-name-2.0.0.tgz#ead774abee72e20409433a066366023dd6887a41",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/get-func-name/-/get-func-name-2.0.0.tgz",
+    "hash": "ead774abee72e20409433a066366023dd6887a41",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "ead774abee72e20409433a066366023dd6887a41"
+}

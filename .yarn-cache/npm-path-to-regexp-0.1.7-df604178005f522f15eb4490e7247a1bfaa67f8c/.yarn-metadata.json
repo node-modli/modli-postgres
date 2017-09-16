@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz",
+    "hash": "df604178005f522f15eb4490e7247a1bfaa67f8c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "df604178005f522f15eb4490e7247a1bfaa67f8c"
+}

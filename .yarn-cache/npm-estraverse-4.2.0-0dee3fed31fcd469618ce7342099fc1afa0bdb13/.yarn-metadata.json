@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz",
+    "hash": "0dee3fed31fcd469618ce7342099fc1afa0bdb13",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0dee3fed31fcd469618ce7342099fc1afa0bdb13"
+}

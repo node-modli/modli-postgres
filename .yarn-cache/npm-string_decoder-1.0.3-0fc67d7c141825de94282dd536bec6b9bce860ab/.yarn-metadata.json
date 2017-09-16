@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz",
+    "hash": "0fc67d7c141825de94282dd536bec6b9bce860ab",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0fc67d7c141825de94282dd536bec6b9bce860ab"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.5.tgz#71c0ee3b102de3f202f3b64f608d173fcba1a918",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.5.tgz",
+    "hash": "71c0ee3b102de3f202f3b64f608d173fcba1a918",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "71c0ee3b102de3f202f3b64f608d173fcba1a918"
+}

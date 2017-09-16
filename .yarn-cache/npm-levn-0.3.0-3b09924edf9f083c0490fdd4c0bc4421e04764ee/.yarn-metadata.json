@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz",
+    "hash": "3b09924edf9f083c0490fdd4c0bc4421e04764ee",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3b09924edf9f083c0490fdd4c0bc4421e04764ee"
+}

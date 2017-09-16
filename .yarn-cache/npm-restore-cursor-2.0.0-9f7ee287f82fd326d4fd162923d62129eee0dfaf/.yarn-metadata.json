@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-2.0.0.tgz#9f7ee287f82fd326d4fd162923d62129eee0dfaf",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-2.0.0.tgz",
+    "hash": "9f7ee287f82fd326d4fd162923d62129eee0dfaf",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9f7ee287f82fd326d4fd162923d62129eee0dfaf"
+}

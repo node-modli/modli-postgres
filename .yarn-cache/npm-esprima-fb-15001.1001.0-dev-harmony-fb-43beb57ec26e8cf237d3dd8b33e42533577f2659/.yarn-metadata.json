@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/esprima-fb/-/esprima-fb-15001.1001.0-dev-harmony-fb.tgz#43beb57ec26e8cf237d3dd8b33e42533577f2659",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/esprima-fb/-/esprima-fb-15001.1001.0-dev-harmony-fb.tgz",
+    "hash": "43beb57ec26e8cf237d3dd8b33e42533577f2659",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "43beb57ec26e8cf237d3dd8b33e42533577f2659"
+}

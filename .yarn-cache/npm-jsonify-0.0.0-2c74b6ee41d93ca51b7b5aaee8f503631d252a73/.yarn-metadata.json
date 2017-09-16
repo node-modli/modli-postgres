@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz",
+    "hash": "2c74b6ee41d93ca51b7b5aaee8f503631d252a73",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
+}

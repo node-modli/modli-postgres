@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz#c90941ad59e4273328923074d2cf2e7cbc6ec0d9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz",
+    "hash": "c90941ad59e4273328923074d2cf2e7cbc6ec0d9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c90941ad59e4273328923074d2cf2e7cbc6ec0d9"
+}

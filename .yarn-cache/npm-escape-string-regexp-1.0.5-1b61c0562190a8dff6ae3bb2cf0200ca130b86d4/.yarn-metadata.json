@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+    "hash": "1b61c0562190a8dff6ae3bb2cf0200ca130b86d4",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
+}

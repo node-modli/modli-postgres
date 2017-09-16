@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/espree/-/espree-3.5.1.tgz#0c988b8ab46db53100a1954ae4ba995ddd27d87e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/espree/-/espree-3.5.1.tgz",
+    "hash": "0c988b8ab46db53100a1954ae4ba995ddd27d87e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0c988b8ab46db53100a1954ae4ba995ddd27d87e"
+}

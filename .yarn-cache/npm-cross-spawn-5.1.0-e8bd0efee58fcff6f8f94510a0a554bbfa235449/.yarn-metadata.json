@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz",
+    "hash": "e8bd0efee58fcff6f8f94510a0a554bbfa235449",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e8bd0efee58fcff6f8f94510a0a554bbfa235449"
+}

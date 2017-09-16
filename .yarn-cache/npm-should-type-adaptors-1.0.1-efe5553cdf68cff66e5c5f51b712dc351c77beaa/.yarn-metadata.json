@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/should-type-adaptors/-/should-type-adaptors-1.0.1.tgz#efe5553cdf68cff66e5c5f51b712dc351c77beaa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/should-type-adaptors/-/should-type-adaptors-1.0.1.tgz",
+    "hash": "efe5553cdf68cff66e5c5f51b712dc351c77beaa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "efe5553cdf68cff66e5c5f51b712dc351c77beaa"
+}

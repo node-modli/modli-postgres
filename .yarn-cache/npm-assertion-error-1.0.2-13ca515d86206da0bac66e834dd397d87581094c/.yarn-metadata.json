@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/assertion-error/-/assertion-error-1.0.2.tgz#13ca515d86206da0bac66e834dd397d87581094c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/assertion-error/-/assertion-error-1.0.2.tgz",
+    "hash": "13ca515d86206da0bac66e834dd397d87581094c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "13ca515d86206da0bac66e834dd397d87581094c"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-4.0.0.tgz",
+    "hash": "a8479022eb1ac368a871389b635262c505ee368f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a8479022eb1ac368a871389b635262c505ee368f"
+}

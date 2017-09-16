@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/buffer-writer/-/buffer-writer-1.0.1.tgz#22a936901e3029afcd7547eb4487ceb697a3bf08",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/buffer-writer/-/buffer-writer-1.0.1.tgz",
+    "hash": "22a936901e3029afcd7547eb4487ceb697a3bf08",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "22a936901e3029afcd7547eb4487ceb697a3bf08"
+}

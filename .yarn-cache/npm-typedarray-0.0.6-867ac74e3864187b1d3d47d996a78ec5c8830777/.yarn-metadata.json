@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz",
+    "hash": "867ac74e3864187b1d3d47d996a78ec5c8830777",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "867ac74e3864187b1d3d47d996a78ec5c8830777"
+}

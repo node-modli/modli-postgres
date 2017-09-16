@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz#753b87a89a11c95467c4ac1626c4efc4e05c67be",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz",
+    "hash": "753b87a89a11c95467c4ac1626c4efc4e05c67be",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "753b87a89a11c95467c4ac1626c4efc4e05c67be"
+}

@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "postgres-interval",
+    "main": "index.js",
+    "version": "1.1.1",
+    "description": "Parse Postgres interval columns",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bendrucker/postgres-interval.git"
+    },
+    "author": {
+      "name": "Ben Drucker",
+      "email": "bvdrucker@gmail.com",
+      "url": "bendrucker.me"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "standard && tape test.js"
+    },
+    "keywords": [
+      "postgres",
+      "interval",
+      "parser"
+    ],
+    "dependencies": {
+      "xtend": "^4.0.0"
+    },
+    "devDependencies": {
+      "tape": "^4.0.0",
+      "standard": "^4.0.0"
+    },
+    "files": [
+      "index.js",
+      "readme.md"
+    ],
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-postgres-interval-1.1.1-acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# postgres-interval [![Build Status](https://travis-ci.org/bendrucker/postgres-interval.svg?branch=master)](https://travis-ci.org/bendrucker/postgres-interval)\n\n> Parse Postgres interval columns\n\n\n## Install\n\n```\n$ npm install --save postgres-interval\n```\n\n\n## Usage\n\n```js\nvar parse = require('postgres-interval')\nvar interval = parse('01:02:03')\n//=> {hours: 1, minutes: 2, seconds: 3}\ninterval.toPostgres()\n// 3 seconds 2 minutes 1 hours\ninterval.toISO()\n// P0Y0M0DT1H2M3S\n```\n\n## API\n\n#### `parse(pgInterval)` -> `interval`\n\n##### pgInterval\n\n*Required*  \nType: `string`\n\nA Postgres interval string.\n\n#### `interval.toPostgres()` -> `string`\n\nReturns an interval string. This allows the interval object to be passed into prepared statements.\n\n#### `interval.toISO()` -> `string`\n\nReturns an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) compliant string.\n\n## License\n\nMIT © [Ben Drucker](http://bendrucker.me)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Ben Drucker <bvdrucker@gmail.com> (bendrucker.me)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.1.1.tgz#acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.1.1.tgz",
+    "hash": "acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0",
+    "registry": "npm",
+    "packageName": "postgres-interval"
+  },
+  "registry": "npm",
+  "hash": "acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/istanbul-harmony/-/istanbul-harmony-0.3.16.tgz#5e641a74829c11c807994800efae4be274861644",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/istanbul-harmony/-/istanbul-harmony-0.3.16.tgz",
+    "hash": "5e641a74829c11c807994800efae4be274861644",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "5e641a74829c11c807994800efae4be274861644"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/assert/-/assert-1.4.1.tgz#99912d591836b5a6f5b345c0f07eefc08fc65d91",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/assert/-/assert-1.4.1.tgz",
+    "hash": "99912d591836b5a6f5b345c0f07eefc08fc65d91",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "99912d591836b5a6f5b345c0f07eefc08fc65d91"
+}

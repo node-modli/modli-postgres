@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz",
+    "hash": "e8fbf374dc556ff8947a10dcb0572d633f2cfa10",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
+}

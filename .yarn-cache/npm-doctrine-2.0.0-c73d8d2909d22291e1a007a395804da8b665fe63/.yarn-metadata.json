@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.0.tgz#c73d8d2909d22291e1a007a395804da8b665fe63",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.0.tgz",
+    "hash": "c73d8d2909d22291e1a007a395804da8b665fe63",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c73d8d2909d22291e1a007a395804da8b665fe63"
+}

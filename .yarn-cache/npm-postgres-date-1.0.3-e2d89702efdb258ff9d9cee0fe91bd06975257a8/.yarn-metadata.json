@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.3.tgz#e2d89702efdb258ff9d9cee0fe91bd06975257a8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.3.tgz",
+    "hash": "e2d89702efdb258ff9d9cee0fe91bd06975257a8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e2d89702efdb258ff9d9cee0fe91bd06975257a8"
+}

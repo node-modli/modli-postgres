@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz",
+    "hash": "21932a549f5e52ffd9a827f570e04be62a97da54",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "21932a549f5e52ffd9a827f570e04be62a97da54"
+}

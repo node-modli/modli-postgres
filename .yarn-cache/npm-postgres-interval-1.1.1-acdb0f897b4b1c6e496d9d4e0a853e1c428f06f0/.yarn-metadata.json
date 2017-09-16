@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.1.1.tgz#acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.1.1.tgz",
+    "hash": "acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "acdb0f897b4b1c6e496d9d4e0a853e1c428f06f0"
+}

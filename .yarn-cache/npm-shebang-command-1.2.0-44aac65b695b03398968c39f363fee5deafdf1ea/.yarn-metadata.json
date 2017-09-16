@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz",
+    "hash": "44aac65b695b03398968c39f363fee5deafdf1ea",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "44aac65b695b03398968c39f363fee5deafdf1ea"
+}

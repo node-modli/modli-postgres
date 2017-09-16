@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/deep-eql/-/deep-eql-3.0.1.tgz#dfc9404400ad1c8fe023e7da1df1c147c4b444df",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/deep-eql/-/deep-eql-3.0.1.tgz",
+    "hash": "dfc9404400ad1c8fe023e7da1df1c147c4b444df",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "dfc9404400ad1c8fe023e7da1df1c147c4b444df"
+}

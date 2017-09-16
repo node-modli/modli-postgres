@@ -1,0 +1,70 @@
+{
+  "manifest": {
+    "name": "pg",
+    "version": "7.3.0",
+    "description": "PostgreSQL client - pure javascript & libpq with the same API",
+    "keywords": [
+      "postgres",
+      "pg",
+      "libpq",
+      "postgre",
+      "database",
+      "rdbms"
+    ],
+    "homepage": "http://github.com/brianc/node-postgres",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/brianc/node-postgres.git"
+    },
+    "author": {
+      "name": "Brian Carlson",
+      "email": "brian.m.carlson@gmail.com"
+    },
+    "main": "./lib",
+    "dependencies": {
+      "buffer-writer": "1.0.1",
+      "js-string-escape": "1.0.1",
+      "packet-reader": "0.3.1",
+      "pg-connection-string": "0.1.3",
+      "pg-pool": "~2.0.3",
+      "pg-types": "~1.12.1",
+      "pgpass": "1.x",
+      "semver": "4.3.2"
+    },
+    "devDependencies": {
+      "async": "0.9.0",
+      "co": "4.6.0",
+      "eslint": "4.2.0",
+      "eslint-config-standard": "10.2.1",
+      "eslint-plugin-import": "2.7.0",
+      "eslint-plugin-node": "5.1.0",
+      "eslint-plugin-promise": "3.5.0",
+      "eslint-plugin-standard": "3.0.1",
+      "pg-copy-streams": "0.3.0"
+    },
+    "minNativeVersion": "2.0.0",
+    "scripts": {
+      "test": "make test-all"
+    },
+    "license": "MIT",
+    "engines": {
+      "node": ">= 4.5.0"
+    },
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-pg-7.3.0-275e27466e54a645f6b4a16f6acadf6b849ad83b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# node-postgres\n\n[![Build Status](https://secure.travis-ci.org/brianc/node-postgres.svg?branch=master)](http://travis-ci.org/brianc/node-postgres)\n[![Dependency Status](https://david-dm.org/brianc/node-postgres.svg)](https://david-dm.org/brianc/node-postgres)\n<span class=\"badge-npmversion\"><a href=\"https://npmjs.org/package/pg\" title=\"View this project on NPM\"><img src=\"https://img.shields.io/npm/v/pg.svg\" alt=\"NPM version\" /></a></span>\n<span class=\"badge-npmdownloads\"><a href=\"https://npmjs.org/package/pg\" title=\"View this project on NPM\"><img src=\"https://img.shields.io/npm/dm/pg.svg\" alt=\"NPM downloads\" /></a></span>\n\nNon-blocking PostgreSQL client for node.js.  Pure JavaScript and optional native libpq bindings.\n\n## Install\n\n```sh\n$ npm install pg\n```\n\n---\n## :star: [Documentation](https://node-postgres.com) :star:\n\n\n### Features\n\n* Pure JavaScript client and native libpq bindings share _the same api_\n* Connection pooling\n* Extensible js<->postgresql data-type coercion\n* Supported PostgreSQL features\n  * Parameterized queries\n  * Named statements with query plan caching\n  * Async notifications with `LISTEN/NOTIFY`\n  * Bulk import & export with `COPY TO/COPY FROM`\n\n### Extras\n\nnode-postgres is by design pretty light on abstractions.  These are some handy modules we've been using over the years to complete the picture.\nThe entire list can be found on our [wiki](https://github.com/brianc/node-postgres/wiki/Extras).\n\n## Support\n\nnode-postgres is free software.  If you encounter a bug with the library please open an issue on the [github repo](https://github.com/brianc/node-postgres). If you have questions unanswered by the documentation please open an issue pointing out how the documentation was unclear & I will do my best to make it better!\n\nWhen you open an issue please provide:\n- version of node\n- version of postgres\n- smallest possible snippet of code to reproduce the problem\n\nYou can also follow me [@briancarlson](https://twitter.com/briancarlson) if that's your thing. I try to always announce noteworthy changes & developments with node-postgres on Twitter.\n\n### Professional Support\n\nI offer professional support for node-postgres.  I provide implementation, training, and many years of expertise on how to build applications with node, express, PostgreSQL, and react/redux.  Please contact me at [brian.m.carlson@gmail.com](mailto:brian.m.carlson@gmail.com) to discuss how I can help your company be more successful!\n\n### Sponsorship :star:\n\nIf you are benefiting from node-postgres and would like to help keep the project financially sustainable please visit Brian Carlson's [Patreon page](https://www.patreon.com/node_postgres).\n\n## Contributing\n\n__:heart: contributions!__\n\nI will __happily__ accept your pull request if it:\n- __has tests__\n- looks reasonable\n- does not break backwards compatibility\n\n## Troubleshooting and FAQ\n\nThe causes and solutions to common errors can be found among the [Frequently Asked Questions(FAQ)](https://github.com/brianc/node-postgres/wiki/FAQ)\n\n## License\n\nCopyright (c) 2010-2017 Brian Carlson (brian.m.carlson@gmail.com)\n\n Permission is hereby granted, free of charge, to any person obtaining a copy\n of this software and associated documentation files (the \"Software\"), to deal\n in the Software without restriction, including without limitation the rights\n to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n copies of the Software, and to permit persons to whom the Software is\n furnished to do so, subject to the following conditions:\n\n The above copyright notice and this permission notice shall be included in\n all copies or substantial portions of the Software.\n\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n THE SOFTWARE.\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2010 - 2017 Brian Carlson\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/pg/-/pg-7.3.0.tgz#275e27466e54a645f6b4a16f6acadf6b849ad83b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/pg/-/pg-7.3.0.tgz",
+    "hash": "275e27466e54a645f6b4a16f6acadf6b849ad83b",
+    "registry": "npm",
+    "packageName": "pg"
+  },
+  "registry": "npm",
+  "hash": "275e27466e54a645f6b4a16f6acadf6b849ad83b"
+}

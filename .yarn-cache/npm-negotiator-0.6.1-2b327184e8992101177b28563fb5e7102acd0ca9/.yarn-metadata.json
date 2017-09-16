@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz",
+    "hash": "2b327184e8992101177b28563fb5e7102acd0ca9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2b327184e8992101177b28563fb5e7102acd0ca9"
+}

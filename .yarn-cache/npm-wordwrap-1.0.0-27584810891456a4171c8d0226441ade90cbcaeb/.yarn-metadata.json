@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz",
+    "hash": "27584810891456a4171c8d0226441ade90cbcaeb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "27584810891456a4171c8d0226441ade90cbcaeb"
+}

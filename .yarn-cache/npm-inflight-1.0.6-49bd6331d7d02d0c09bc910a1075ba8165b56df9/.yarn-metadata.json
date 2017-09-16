@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz",
+    "hash": "49bd6331d7d02d0c09bc910a1075ba8165b56df9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "49bd6331d7d02d0c09bc910a1075ba8165b56df9"
+}

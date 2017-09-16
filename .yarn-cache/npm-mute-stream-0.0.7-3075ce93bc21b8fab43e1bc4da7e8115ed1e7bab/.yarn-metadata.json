@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz",
+    "hash": "3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
+}

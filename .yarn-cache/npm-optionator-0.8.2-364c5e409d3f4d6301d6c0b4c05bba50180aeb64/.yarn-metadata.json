@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz",
+    "hash": "364c5e409d3f4d6301d6c0b4c05bba50180aeb64",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
+}

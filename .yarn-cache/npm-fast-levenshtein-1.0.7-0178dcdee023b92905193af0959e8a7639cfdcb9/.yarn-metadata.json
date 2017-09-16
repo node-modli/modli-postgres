@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-1.0.7.tgz#0178dcdee023b92905193af0959e8a7639cfdcb9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-1.0.7.tgz",
+    "hash": "0178dcdee023b92905193af0959e8a7639cfdcb9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0178dcdee023b92905193af0959e8a7639cfdcb9"
+}

@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "postgres-array",
+    "main": "index.js",
+    "version": "1.0.2",
+    "description": "Parse postgres array columns",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bendrucker/postgres-array.git"
+    },
+    "author": {
+      "name": "Ben Drucker",
+      "email": "bvdrucker@gmail.com",
+      "url": "bendrucker.me"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "standard && tape test.js"
+    },
+    "keywords": [
+      "postgres",
+      "array",
+      "parser"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "ap": "^0.2.0",
+      "standard": "^4.0.0",
+      "tape": "^4.0.0"
+    },
+    "files": [
+      "index.js",
+      "readme.md"
+    ],
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-postgres-array-1.0.2-8e0b32eb03bf77a5c0a7851e0441c169a256a238/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# postgres-array [![Build Status](https://travis-ci.org/bendrucker/postgres-array.svg?branch=master)](https://travis-ci.org/bendrucker/postgres-array)\n\n> Parse postgres array columns\n\n\n## Install\n\n```\n$ npm install --save postgres-array\n```\n\n\n## Usage\n\n```js\nvar postgresArray = require('postgres-array')\n\npostgresArray.parse('{1,2,3}', parseInt);\n//=> [1, 2, 3]\n```\n\n## API\n\n#### `parse(input, [transform])` -> `array`\n\n##### input\n\n*Required*  \nType: `string`\n\nA Postgres array string.\n\n##### transform\n\nType: `function`  \nDefault: `identity`\n\nA function that transforms non-null values inserted into the array.\n\n\n## License\n\nMIT © [Ben Drucker](http://bendrucker.me)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Ben Drucker <bvdrucker@gmail.com> (bendrucker.me)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/postgres-array/-/postgres-array-1.0.2.tgz#8e0b32eb03bf77a5c0a7851e0441c169a256a238",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/postgres-array/-/postgres-array-1.0.2.tgz",
+    "hash": "8e0b32eb03bf77a5c0a7851e0441c169a256a238",
+    "registry": "npm",
+    "packageName": "postgres-array"
+  },
+  "registry": "npm",
+  "hash": "8e0b32eb03bf77a5c0a7851e0441c169a256a238"
+}
