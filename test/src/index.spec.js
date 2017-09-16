@@ -1,5 +1,5 @@
 /* eslint no-unused-expressions: 0 */
-/* global expect, request, describe, it, before, after */
+/* global expect, describe, it, beforeEach, afterEach */
 require('../setup')
 const PostgresAdapter = require('../../src/index')
 
@@ -47,7 +47,7 @@ describe('postgres', () => {
   describe('createTable', () => {
     it('creates a new table based on object passed (if not exists)', () => {
       return inst.createTable({
-        'id': [ 'serial', 'NOT NULL', 'PRIMARY KEY'],
+        'id': [ 'serial', 'NOT NULL', 'PRIMARY KEY' ],
         'fname': [ 'varchar(255)' ],
         'lname': [ 'varchar(255)' ],
         'email': [ 'varchar(255)' ]

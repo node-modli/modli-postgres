@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "name": "eslint-plugin-standard",
+    "description": "ESlint Plugin for the Standard Linter",
+    "version": "3.0.1",
+    "author": {
+      "name": "Jamund Ferguson",
+      "email": "jamund@gmail.com"
+    },
+    "bugs": {
+      "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "eslint": "^3.19.0",
+      "mocha": "^3.2.0",
+      "standard": "*"
+    },
+    "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+    "keywords": [
+      "eslint",
+      "eslintplugin"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+    },
+    "scripts": {
+      "test": "standard && mocha tests/"
+    },
+    "peerDependencies": {
+      "eslint": ">=3.19.0"
+    },
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-eslint-plugin-standard-3.0.1-34d0c915b45edc6f010393c7eef3823b08565cf2/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# eslint-plugin-standard [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[npm-image]: https://img.shields.io/npm/v/eslint-plugin-standard.svg\n[npm-url]: https://npmjs.org/package/eslint-plugin-standard\n[downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-standard.svg\n[downloads-url]: https://npmjs.org/package/eslint-plugin-standard\n[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg\n[standard-url]: https://standardjs.com\n\nESlint Rules for the Standard Linter\n\n### Usage\n\n`npm install --save-dev eslint-plugin-standard`\n\n### Configuration\n\n```js\n{\n  rules: {\n    'standard/object-curly-even-spacing': [2, \"either\"]\n    'standard/array-bracket-even-spacing': [2, \"either\"],\n    'standard/computed-property-even-spacing': [2, \"even\"]\n    'standard/no-callback-literal': [2, [\"cb\", \"callback\"]]\n  }\n}\n```\n\n### Rules Explanations\n\nThere are several rules that were created specifically for the `standard` linter.\n\n- `object-curly-even-spacing` - Like `object-curly-spacing` from ESLint except it has an `either` option which lets you have 1 or 0 spaces padding.\n- `array-bracket-even-spacing` - Like `array-bracket-even-spacing` from ESLint except it has an `either` option which lets you have 1 or 0 spacing padding.\n- `computed-property-even-spacing` - Like `computed-property-spacing` around ESLint except is has an `even` option which lets you have 1 or 0 spacing padding.\n- `no-callback-literal` - Ensures that we strictly follow the callback pattern with `undefined`, `null` or an error object in the first position of a callback.\n\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Jamund Ferguson\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz#34d0c915b45edc6f010393c7eef3823b08565cf2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz",
+    "hash": "34d0c915b45edc6f010393c7eef3823b08565cf2",
+    "registry": "npm",
+    "packageName": "eslint-plugin-standard"
+  },
+  "registry": "npm",
+  "hash": "34d0c915b45edc6f010393c7eef3823b08565cf2"
+}

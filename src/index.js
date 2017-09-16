@@ -1,4 +1,3 @@
-const Promise = require('bluebird')
 const pg = require('pg')
 
 /**
@@ -24,6 +23,7 @@ module.exports = class {
    */
   query (query) {
     let res
+    // TODO: overlapping connections
     return this.pg.connect()
       .then(() => this.pg.query(query))
       .then(data => {
@@ -134,5 +134,4 @@ module.exports = class {
   extend (name, fn) {
     this[name] = fn.bind(this)
   }
-
 }

@@ -1,0 +1,71 @@
+{
+  "manifest": {
+    "version": "1.1.1",
+    "name": "pkg-config",
+    "description": "parse the closest `package.json` and get package specific configurations",
+    "author": {
+      "name": "Ahmad Nassri",
+      "email": "ahmad@ahmadnassri.com",
+      "url": "https://www.ahmadnassri.com/"
+    },
+    "homepage": "https://github.com/ahmadnassri/pkg-config",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ahmadnassri/pkg-config.git"
+    },
+    "license": "MIT",
+    "keywords": [
+      "pkg-config"
+    ],
+    "engines": {
+      "node": ">=0.10"
+    },
+    "files": [
+      "index.js"
+    ],
+    "bugs": {
+      "url": "https://github.com/ahmadnassri/pkg-config/issues"
+    },
+    "scripts": {
+      "pretest": "standard && echint",
+      "test": "mocha",
+      "posttest": "npm run coverage",
+      "coverage": "istanbul cover --dir coverage _mocha -- -R dot",
+      "codeclimate": "codeclimate < coverage/lcov.info"
+    },
+    "echint": {
+      "ignore": [
+        "coverage/**"
+      ]
+    },
+    "devDependencies": {
+      "codeclimate-test-reporter": "0.3.1",
+      "echint": "^1.5.3",
+      "istanbul": "^0.4.2",
+      "mocha": "^2.4.5",
+      "should": "^8.2.2",
+      "standard": "^6.0.8"
+    },
+    "dependencies": {
+      "debug-log": "^1.0.0",
+      "find-root": "^1.0.0",
+      "xtend": "^4.0.1"
+    },
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-pkg-config-1.1.1-557ef22d73da3c8837107766c52eadabde298fe4/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# pkg-config [![version][npm-version]][npm-url] [![License][npm-license]][license-url]\n\n> parse the closest `package.json` and get package specific configurations\n\nUseful for package developers to store package-related configuration in dependent's `package.json`.\n\ndefaults to `config` as root, which allows you to still leverage npm's standard [config](https://docs.npmjs.com/files/package.json#config)\n\n[![Build Status][travis-image]][travis-url]\n[![Downloads][npm-downloads]][npm-url]\n[![Code Climate][codeclimate-quality]][codeclimate-url]\n[![Coverage Status][codeclimate-coverage]][codeclimate-url]\n[![Dependencies][david-image]][david-url]\n\n## Install\n\n```sh\nnpm install --save pkg-config\n```\n\n## Usage\n\n###### sample package.json\n```json\n{\n  ...\n\n  \"config\": {\n    \"my-pkg\": {\n      \"foo\": \"bar\"\n    }\n  },\n\n  \"settings\": {\n    \"some-pkg\": {\n      \"foo\": \"bar\"\n    }\n  }\n\n  ...\n}\n```\n\n```js\n// defaults to `package.config`\nvar config = require('pkg-config')()\n\n// returns `package.config[my-pkg]`\nvar config = require('pkg-config')('my-pkg')\n\n// returns fallback value\nvar config = require('pkg-config')('another-pkg', false, {\n  foo: 'baz'\n})\n\n// returns `package.settings[some-pkg]`\nvar config = require('pkg-config')('some-pkg', {\n  root: 'settings'\n})\n\n// returns `package.settings`\nvar config = require('pkg-config')('settings', {\n  root: false\n})\n```\n\n## API\n\n### config(namespace[, options, fallback])\n\n#### Arguments\n\n| name        | description                                                               | default     |\n| ----------- | ------------------------------------------------------------------------- | ----------- |\n| `namespace` | property name in `package.json`, typically this will be your package name | `undefined` |\n| `option`    | see [`options`](#options)                                                               |\n| `fallback`  | fallback value                                                            | `undefined` |\n\n#### Options\n\n| name    | description                                    | default       |\n| ------  | ---------------------------------------------- | ------------- |\n| `root`  | `package.json` object root                     | `config`      |\n| `cwd`   | starting directory to look for `package.json`  | `process.cwd` |\n| `cache` | cache `package.json`'s content                 | `true`        | \n\n\n## Support\n\nDonations are welcome to help support the continuous development of this project.\n\n[![Gratipay][gratipay-image]][gratipay-url]\n[![PayPal][paypal-image]][paypal-url]\n[![Flattr][flattr-image]][flattr-url]\n[![Bitcoin][bitcoin-image]][bitcoin-url]\n\n## License\n\n[MIT](LICENSE) &copy; [Ahmad Nassri](https://www.ahmadnassri.com)\n\n[license-url]: https://github.com/ahmadnassri/pkg-config/blob/master/LICENSE\n\n[travis-url]: https://travis-ci.org/ahmadnassri/pkg-config\n[travis-image]: https://img.shields.io/travis/ahmadnassri/pkg-config.svg?style=flat-square\n\n[npm-url]: https://www.npmjs.com/package/pkg-config\n[npm-license]: https://img.shields.io/npm/l/pkg-config.svg?style=flat-square\n[npm-version]: https://img.shields.io/npm/v/pkg-config.svg?style=flat-square\n[npm-downloads]: https://img.shields.io/npm/dm/pkg-config.svg?style=flat-square\n\n[codeclimate-url]: https://codeclimate.com/github/ahmadnassri/pkg-config\n[codeclimate-quality]: https://img.shields.io/codeclimate/github/ahmadnassri/pkg-config.svg?style=flat-square\n[codeclimate-coverage]: https://img.shields.io/codeclimate/coverage/github/ahmadnassri/pkg-config.svg?style=flat-square\n\n[david-url]: https://david-dm.org/ahmadnassri/pkg-config\n[david-image]: https://img.shields.io/david/ahmadnassri/pkg-config.svg?style=flat-square\n\n[gratipay-url]: https://www.gratipay.com/ahmadnassri/\n[gratipay-image]: https://img.shields.io/gratipay/ahmadnassri.svg?style=flat-square\n\n[paypal-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UJ2B2BTK9VLRS&on0=project&os0=pkg-config\n[paypal-image]: http://img.shields.io/badge/paypal-donate-green.svg?style=flat-square\n\n[flattr-url]: https://flattr.com/submit/auto?user_id=ahmadnassri&url=https://github.com/ahmadnassri/pkg-config&title=pkg-config&language=&tags=github&category=software\n[flattr-image]: http://img.shields.io/badge/flattr-donate-green.svg?style=flat-square\n\n[bitcoin-image]: http://img.shields.io/badge/bitcoin-1Nb46sZRVG3or7pNaDjthcGJpWhvoPpCxy-green.svg?style=flat-square\n[bitcoin-url]: https://www.coinbase.com/checkouts/ae383ae6bb931a2fa5ad11cec115191e?name=pkg-config\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Ahmad Nassri (https://www.ahmadnassri.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/pkg-config/-/pkg-config-1.1.1.tgz#557ef22d73da3c8837107766c52eadabde298fe4",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/pkg-config/-/pkg-config-1.1.1.tgz",
+    "hash": "557ef22d73da3c8837107766c52eadabde298fe4",
+    "registry": "npm",
+    "packageName": "pkg-config"
+  },
+  "registry": "npm",
+  "hash": "557ef22d73da3c8837107766c52eadabde298fe4"
+}

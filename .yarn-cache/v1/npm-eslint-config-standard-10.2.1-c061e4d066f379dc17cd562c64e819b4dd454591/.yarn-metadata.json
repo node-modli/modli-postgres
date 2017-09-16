@@ -1,0 +1,82 @@
+{
+  "manifest": {
+    "name": "eslint-config-standard",
+    "description": "JavaScript Standard Style - ESLint Shareable Config",
+    "version": "10.2.1",
+    "author": {
+      "name": "Feross Aboukhadijeh",
+      "email": "feross@feross.org",
+      "url": "http://feross.org/"
+    },
+    "bugs": {
+      "url": "https://github.com/feross/eslint-config-standard/issues"
+    },
+    "devDependencies": {
+      "eslint": "^3.19.0",
+      "eslint-plugin-import": "^2.2.0",
+      "eslint-plugin-node": "^4.2.2",
+      "eslint-plugin-promise": "^3.5.0",
+      "eslint-plugin-standard": "^3.0.0",
+      "tape": "^4.6.3"
+    },
+    "homepage": "https://github.com/feross/eslint-config-standard",
+    "keywords": [
+      "JavaScript Standard Style",
+      "check",
+      "checker",
+      "code",
+      "code checker",
+      "code linter",
+      "code standards",
+      "code style",
+      "enforce",
+      "eslint",
+      "eslintconfig",
+      "hint",
+      "jscs",
+      "jshint",
+      "lint",
+      "policy",
+      "quality",
+      "simple",
+      "standard",
+      "standard style",
+      "style",
+      "style checker",
+      "style linter",
+      "verify"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "peerDependencies": {
+      "eslint": ">=3.19.0",
+      "eslint-plugin-import": ">=2.2.0",
+      "eslint-plugin-node": ">=4.2.2",
+      "eslint-plugin-promise": ">=3.5.0",
+      "eslint-plugin-standard": ">=3.0.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/feross/eslint-config-standard.git"
+    },
+    "scripts": {
+      "test": "tape test/*.js"
+    },
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-eslint-config-standard-10.2.1-c061e4d066f379dc17cd562c64e819b4dd454591/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# eslint-config-standard [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[travis-image]: https://img.shields.io/travis/feross/eslint-config-standard/master.svg\n[travis-url]: https://travis-ci.org/feross/eslint-config-standard\n[npm-image]: https://img.shields.io/npm/v/eslint-config-standard.svg\n[npm-url]: https://npmjs.org/package/eslint-config-standard\n[downloads-image]: https://img.shields.io/npm/dm/eslint-config-standard.svg\n[downloads-url]: https://npmjs.org/package/eslint-config-standard\n[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg\n[standard-url]: https://standardjs.com\n\n#### An ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs) for [JavaScript Standard Style](http://standardjs.com)\n\n[![JavaScript Style Guide - Standard Style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)\n\n## Install\n\nThis module is for advanced users. You probably want to use [`standard`](http://standardjs.com) instead :)\n\n```bash\nnpm install eslint-config-standard\n```\n\n## Usage\n\nShareable configs are designed to work with the `extends` feature of `.eslintrc` files.\nYou can learn more about\n[Shareable Configs](http://eslint.org/docs/developer-guide/shareable-configs) on the\nofficial ESLint website.\n\nTo use the JavaScript Standard Style shareable config, first run this:\n\n```bash\nnpm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node\n```\n\nThen, add this to your .eslintrc file:\n\n```\n{\n  \"extends\": \"standard\"\n}\n```\n\n*Note: We omitted the `eslint-config-` prefix since it is automatically assumed by ESLint.*\n\nYou can override settings from the shareable config by adding them directly into your\n`.eslintrc` file.\n\n### Looking for something easier than this?\n\nThe easiest way to use JavaScript Standard Style to check your code is to use the\n[`standard`](http://standardjs.com) package. This comes with a global\nNode command line program (`standard`) that you can run or add to your `npm test` script\nto quickly check your style.\n\n## Badge\n\nUse this in one of your projects? Include one of these badges in your readme to\nlet people know that your code is using the standard style.\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)\n\n```markdown\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)\n```\n\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)\n\n```markdown\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)\n```\n\n## Learn more\n\nFor the full listing of rules, editor plugins, FAQs, and more, visit the main\n[JavaScript Standard Style repo](http://standardjs.com).\n\n## License\n\nMIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Feross Aboukhadijeh\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-10.2.1.tgz#c061e4d066f379dc17cd562c64e819b4dd454591",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-10.2.1.tgz",
+    "hash": "c061e4d066f379dc17cd562c64e819b4dd454591",
+    "registry": "npm",
+    "packageName": "eslint-config-standard"
+  },
+  "registry": "npm",
+  "hash": "c061e4d066f379dc17cd562c64e819b4dd454591"
+}

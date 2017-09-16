@@ -6,14 +6,10 @@ services:
         - POSTGRES_USER=test
         - POSTGRES_PASSWORD=test
         - POSTGRES_DB=test
-      expose:
-        - 5432:5432
 env: 
   - POSTGRES_USER=test
   - POSTGRES_PASSWORD=test
   - POSTGRES_DB=test
-volumes:
-  - ${HOME}/:/root
 before: |
   export MODLI_POSTGRES_HOST=$POSTGRES_PORT_5432_TCP_ADDR
 tasks:

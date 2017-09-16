@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "d",
+    "version": "1.0.0",
+    "description": "Property descriptor factory",
+    "author": {
+      "name": "Mariusz Nowak",
+      "email": "medyk@medikoo.com",
+      "url": "http://www.medikoo.com/"
+    },
+    "keywords": [
+      "descriptor",
+      "es",
+      "ecmascript",
+      "ecma",
+      "property",
+      "descriptors",
+      "meta",
+      "properties"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/medikoo/d.git"
+    },
+    "dependencies": {
+      "es5-ext": "^0.10.9"
+    },
+    "devDependencies": {
+      "tad": "^0.2.4",
+      "xlint": "^0.2.2",
+      "xlint-jslint-medikoo": "^0.1.4"
+    },
+    "scripts": {
+      "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
+      "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
+      "test": "node node_modules/tad/bin/tad"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-d-1.0.0-754bb5bfe55451da69a58b94d45f4c5b0462d58f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# D\n## Property descriptor factory\n\n_Originally derived from [es5-ext](https://github.com/medikoo/es5-ext) package._\n\nDefining properties with descriptors is very verbose:\n\n```javascript\nvar Account = function () {};\nObject.defineProperties(Account.prototype, {\n  deposit: { value: function () {\n      /* ... */\n    }, configurable: true, enumerable: false, writable: true },\n  withdraw: { value: function () {\n      /* ... */\n    }, configurable: true, enumerable: false, writable: true },\n  balance: { get: function () {\n      /* ... */\n    }, configurable: true, enumerable: false }\n});\n```\n\nD cuts that to:\n\n```javascript\nvar d = require('d');\n\nvar Account = function () {};\nObject.defineProperties(Account.prototype, {\n  deposit: d(function () {\n    /* ... */\n  }),\n  withdraw: d(function () {\n    /* ... */\n  }),\n  balance: d.gs(function () {\n    /* ... */\n  })\n});\n```\n\nBy default, created descriptor follow characteristics of native ES5 properties, and defines values as:\n\n```javascript\n{ configurable: true, enumerable: false, writable: true }\n```\n\nYou can overwrite it by preceding _value_ argument with instruction:\n```javascript\nd('c', value); // { configurable: true, enumerable: false, writable: false }\nd('ce', value); // { configurable: true, enumerable: true, writable: false }\nd('e', value); // { configurable: false, enumerable: true, writable: false }\n\n// Same way for get/set:\nd.gs('e', value); // { configurable: false, enumerable: true }\n```\n\n### Installation\n\n\t$ npm install d\n\t\nTo port it to Browser or any other (non CJS) environment, use your favorite CJS bundler. No favorite yet? Try: [Browserify](http://browserify.org/), [Webmake](https://github.com/medikoo/modules-webmake) or [Webpack](http://webpack.github.io/)\n\n### Other utilities\n\n#### autoBind(obj, props) _(d/auto-bind)_\n\nDefine methods which will be automatically bound to its instances\n\n```javascript\nvar d = require('d');\nvar autoBind = require('d/auto-bind');\n\nvar Foo = function () { this._count = 0; };\nObject.defineProperties(Foo.prototype, autoBind({\n  increment: d(function () { ++this._count; });\n}));\n\nvar foo = new Foo();\n\n// Increment foo counter on each domEl click\ndomEl.addEventListener('click', foo.increment, false);\n```\n\n#### lazy(obj, props) _(d/lazy)_\n\nDefine lazy properties, which will be resolved on first access\n\n```javascript\nvar d = require('d');\nvar lazy = require('d/lazy');\n\nvar Foo = function () {};\nObject.defineProperties(Foo.prototype, lazy({\n  items: d(function () { return []; })\n}));\n\nvar foo = new Foo();\nfoo.items.push(1, 2); // foo.items array created and defined directly on foo\n```\n\n## Tests [![Build Status](https://travis-ci.org/medikoo/d.png)](https://travis-ci.org/medikoo/d)\n\n\t$ npm test\n",
+    "licenseText": "Copyright (C) 2013 Mariusz Nowak (www.medikoo.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz",
+    "hash": "754bb5bfe55451da69a58b94d45f4c5b0462d58f",
+    "registry": "npm",
+    "packageName": "d"
+  },
+  "registry": "npm",
+  "hash": "754bb5bfe55451da69a58b94d45f4c5b0462d58f"
+}

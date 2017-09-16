@@ -1,0 +1,62 @@
+{
+  "manifest": {
+    "name": "get-stdin",
+    "version": "5.0.1",
+    "description": "Get stdin as a string or buffer",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/get-stdin.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.12.0"
+    },
+    "scripts": {
+      "test": "xo && ava test.js && echo unicorns | ava test-real.js"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "std",
+      "stdin",
+      "stdio",
+      "concat",
+      "buffer",
+      "stream",
+      "process",
+      "read"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "buffer-equals": "^1.0.3",
+      "xo": "*"
+    },
+    "xo": {
+      "ignores": [
+        "test.js"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": ".yarn-cache/v1/npm-get-stdin-5.0.1-122e161591e21ff4c52530305693f20e6393a398/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# get-stdin [![Build Status](https://travis-ci.org/sindresorhus/get-stdin.svg?branch=master)](https://travis-ci.org/sindresorhus/get-stdin)\n\n> Get [stdin](https://nodejs.org/api/process.html#process_process_stdin) as a string or buffer\n\n\n## Install\n\n```\n$ npm install --save get-stdin\n```\n\n\n## Usage\n\n```js\n// example.js\nconst getStdin = require('get-stdin');\n\ngetStdin().then(str => {\n\tconsole.log(str);\n\t//=> 'unicorns'\n});\n```\n\n```\n$ echo unicorns | node example.js\nunicorns\n```\n\n\n## API\n\nBoth methods returns a promise that is resolved when the `end` event fires on the `stdin` stream, indicating that there is no more data to be read.\n\n### getStdin()\n\nGet `stdin` as a string.\n\nIn a TTY context, a promise that resolves to an empty string is returned.\n\n### getStdin.buffer()\n\nGet `stdin` as a buffer.\n\nIn a TTY context, a promise that resolves to an empty buffer is returned.\n\n\n## Related\n\n- [get-stream](https://github.com/sindresorhus/get-stream) - Get a stream as a string or buffer\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz",
+    "hash": "122e161591e21ff4c52530305693f20e6393a398",
+    "registry": "npm",
+    "packageName": "get-stdin"
+  },
+  "registry": "npm",
+  "hash": "122e161591e21ff4c52530305693f20e6393a398"
+}

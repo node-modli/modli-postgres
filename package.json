@@ -22,7 +22,7 @@
     "build": "babel ./src --out-dir ./build",
     "mocha": "mocha ./test/src --recursive",
     "cover": "istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel/register ./test/src",
-    "lint": "eslint ./src ./test --fix"
+    "lint": "standard --fix --verbose"
   },
   "license": "MIT",
   "devDependencies": {
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "pg": "^7.3.0"
+    "pg": "^7.3.0",
+    "standard": "^10.0.3"
   }
 }
