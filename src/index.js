@@ -1,20 +1,20 @@
-import Promise from 'bluebird';
-import pg from 'pg';
+const Promise = require('bluebird')
+const pg = require('pg')
 
 /**
  * @class postgres
  */
-export default class {
+module.exports = class {
   /**
    * Creates the connection string for the instance
    * @param {Object} config
-   * @property {String} config.host The host to connect to
-   * @property {String} config.username The connection username
-   * @property {String} config.password The connection password
-   * @property {String} config.database The connection database
+   * @param {String} config.host The host to connect to
+   * @param {String} config.user The connection username
+   * @param {String} config.password The connection password
+   * @param {String} config.database The connection database
    */
   constructor (config) {
-    this.connStr = `postgres://${config.username}:${config.password}@${config.host}/${config.database}`;
+    this.pg = new pg.Client(config)
   }
 
   /**
@@ -23,24 +23,18 @@ export default class {
    * @returns {Object} promise
    */
   query (query) {
-    return new Promise((resolve, reject) => {
-      pg.connect(this.connStr, (err, client, done) => {
-        if (err) {
-          reject(err);
-        } else {
-          client.query(query, (e, result) => {
-            // Release client
-            done();
-            // Process
-            if (e) {
-              reject(e);
-            } else {
-              resolve(result);
-            }
-          });
-        }
-      });
-    });
+    let res
+    return this.pg.connect()
+      .then(() => this.pg.query(query))
+      .then(data => {
+        res = data
+        return this.pg.end()
+      })
+      .then(() => res)
+      .catch((err) => {
+        return this.pg.end()
+          .then(() => { throw err })
+      })
   }
 
   /**
@@ -51,17 +45,17 @@ export default class {
    */
   createTable (props) {
     // Build query
-    const len = Object.keys(props).length;
-    let i = 1;
-    let query = `CREATE TABLE IF NOT EXISTS ${this.tableName} (`;
+    const len = Object.keys(props).length
+    let i = 1
+    let query = `CREATE TABLE IF NOT EXISTS ${this.tableName} (`
     for (let prop in props) {
-      let comma = (i !== len) ? ', ' : '';
-      query += `${prop} ${props[prop].join(' ')}${comma}`;
-      i++;
+      let comma = (i !== len) ? ', ' : ''
+      query += `${prop} ${props[prop].join(' ')}${comma}`
+      i++
     }
-    query += ');';
+    query += ')'
     // Run query
-    return this.query(query);
+    return this.query(query)
   }
 
   /**
@@ -71,24 +65,17 @@ export default class {
    * @returns {Object} promise
    */
   create (body, version = false) {
-    return new Promise((resolve, reject) => {
-      // Validate
-      const validationErrors = this.validate(body, version);
-      if (validationErrors) {
-        reject(validationErrors);
-      } else {
-        // Build query
-        let cols = [];
-        let vals = [];
-        for (let prop in body) {
-          cols.push(prop);
-          vals.push('\'' + body[prop] + '\'');
-        }
-        const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')});`;
-        // Run query
-        resolve(this.query(query));
-      }
-    });
+    return this.validate(body)
+      .then(data => {
+        const vals = []
+        const cols = Object.keys(data).reduce((acc, key) => {
+          vals.push(`'${data[key]}'`)
+          acc.push(key)
+          return acc
+        }, [])
+        const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')})`
+        return this.query(query)
+      })
   }
 
   /**
@@ -97,25 +84,13 @@ export default class {
    * @returns {Object} promise
    */
   read (query, version = false) {
-    let where;
-    if (query) {
-      where = ` WHERE ${query}`;
-    } else {
-      where = '';
-    }
-    return new Promise((resolve, reject) => {
-      return this.query(`SELECT * FROM ${this.tableName}${where}`)
-        .then((results) => {
-          let tmp = [];
-          results.rows.forEach((r) => {
-            tmp.push(this.sanitize(r, version));
-          });
-          resolve(tmp);
+    const where = query ? ` WHERE ${query}` : ''
+    return this.query(`SELECT * FROM ${this.tableName}${where}`)
+      .then((results) => {
+        return results.rows.map((r) => {
+          return this.sanitize ? this.sanitize(r, version) : r
         })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+      })
   }
 
   /**
@@ -126,24 +101,20 @@ export default class {
    * @returns {Object} promise
    */
   update (query, body, version = false) {
-    return new Promise((resolve, reject) => {
-      const validationErrors = this.validate(body, version);
-      if (validationErrors) {
-        reject(validationErrors);
-      } else {
-        let i = 1;
-        let changes = '';
-        let len = Object.keys(body).length;
+    return this.validate(body)
+      .then(data => {
+        let i = 1
+        let changes = ''
+        let len = Object.keys(body).length
         for (let prop in body) {
           if ({}.hasOwnProperty.call(body, prop)) {
-            let comma = (i !== len) ? ', ' : '';
-            changes += `${prop}='${body[prop]}'${comma}`;
-            i++;
+            let comma = (i !== len) ? ', ' : ''
+            changes += `${prop}='${body[prop]}'${comma}`
+            i++
           }
         }
-        resolve(this.query(`UPDATE ${this.tableName} SET ${changes} WHERE ${query}`));
-      }
-    });
+        return this.query(`UPDATE ${this.tableName} SET ${changes} WHERE ${query}`)
+      })
   }
 
   /**
@@ -152,7 +123,7 @@ export default class {
    * @returns {Object} promise
    */
   delete (query) {
-    return this.query(`DELETE FROM ${this.tableName} WHERE ${query}`);
+    return this.query(`DELETE FROM ${this.tableName} WHERE ${query}`)
   }
 
   /**
@@ -161,7 +132,7 @@ export default class {
    * @param {Function} fn The function to extend on the object
    */
   extend (name, fn) {
-    this[name] = fn.bind(this);
+    this[name] = fn.bind(this)
   }
 
 }
