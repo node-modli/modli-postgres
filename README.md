@@ -16,7 +16,7 @@ When defining a property which will utilize the adapter it is required that a
 
 ```javascript
 const { model, adapter, obey, use } = require('modli')
-const postgres from require('modli-postgres')
+const postgres = require('modli-postgres')
 
 model.add({
   name: 'foo',
