@@ -1,4 +1,4 @@
-const pg = require('pg')
+const { Pool } = require('pg')
 
 /**
  * @class postgres
@@ -13,7 +13,7 @@ module.exports = class {
    * @param {String} config.database The connection database
    */
   constructor (config) {
-    this.pg = new pg.Client(config)
+    this.pg = new Pool(config)
   }
 
   /**
@@ -22,18 +22,19 @@ module.exports = class {
    * @returns {Object} promise
    */
   query (query) {
-    let res
-    // TODO: overlapping connections
+    let client
     return this.pg.connect()
-      .then(() => this.pg.query(query))
-      .then(data => {
-        res = data
-        return this.pg.end()
+      .then((cli) => {
+        client = cli
+        return client.query(query)
       })
-      .then(() => res)
+      .then(res => {
+        client.release()
+        return res
+      })
       .catch((err) => {
-        return this.pg.end()
-          .then(() => { throw err })
+        client.release()
+        throw err
       })
   }
 
@@ -105,11 +106,11 @@ module.exports = class {
       .then(data => {
         let i = 1
         let changes = ''
-        let len = Object.keys(body).length
-        for (let prop in body) {
-          if ({}.hasOwnProperty.call(body, prop)) {
+        let len = Object.keys(data).length
+        for (let prop in data) {
+          if ({}.hasOwnProperty.call(data, prop)) {
             let comma = (i !== len) ? ', ' : ''
-            changes += `${prop}='${body[prop]}'${comma}`
+            changes += `${prop}='${data[prop]}'${comma}`
             i++
           }
         }
