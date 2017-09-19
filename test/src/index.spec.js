@@ -1,65 +1,40 @@
 /* eslint no-unused-expressions: 0 */
-/* global expect, describe, it, beforeEach, afterEach */
 require('../setup')
-const PostgresAdapter = require('../../src/index')
-
-const config = {
-  host: process.env.MODLI_POSTGRES_HOST,
-  user: process.env.POSTGRES_USER,
-  password: process.env.POSTGRES_PASSWORD,
-  database: process.env.POSTGRES_DB
-}
-
-// Test record
-const testData = {
-  fname: 'John',
-  lname: 'Smith',
-  email: 'jsmith@gmail.com'
-}
+const PostgresAdapter = require('src')
 
 describe('postgres', () => {
   let inst
-  beforeEach(() => {
-    inst = new PostgresAdapter(config)
+  before(() => {
+    inst = new PostgresAdapter(fixd.postgres.config)
     inst.tableName = 'foo'
     // Mock validation method, this is automatically done by the model
     inst.validate = (body) => Promise.resolve(body)
     // Mock sanitize method, this is automatically done by the model
     inst.sanitize = (body) => body
   })
-  afterEach(() => {
-    inst.query(`DROP TABLE ${inst.tableName}`)
-  })
+  after(() => inst.pg.end())
   describe('query', () => {
-    it('fails when invalid query is run', () => {
-      return inst.query('`')
-        .catch((err) => {
-          expect(err).to.be.an.instanceof(Error)
-        })
-    })
     it('runs a query against the database when connection is good', () => {
       return inst.query('SELECT 1 + 1 AS number')
         .then((result) => {
           expect(result.rows[0].number).to.equal(2)
         })
     })
+    it('fails when invalid query is run', () => {
+      return expect(inst.query('`')).to.be.rejectedWith(Error)
+    })
   })
   describe('createTable', () => {
     it('creates a new table based on object passed (if not exists)', () => {
-      return inst.createTable({
-        'id': [ 'serial', 'NOT NULL', 'PRIMARY KEY' ],
-        'fname': [ 'varchar(255)' ],
-        'lname': [ 'varchar(255)' ],
-        'email': [ 'varchar(255)' ]
-      })
-      .then((result) => {
-        expect(result.command).to.equal('CREATE')
-      })
+      return inst.createTable(fixd.postgres.createTable)
+        .then((result) => {
+          expect(result.command).to.equal('CREATE')
+        })
     })
   })
   describe('create', () => {
     it('creates a new record based on object passed', () => {
-      return inst.create(testData)
+      return inst.create(fixd.postgres.testData)
         .then((result) => {
           expect(result.command).to.equal('INSERT')
           expect(result.rowCount).to.equal(1)
@@ -71,21 +46,18 @@ describe('postgres', () => {
       return inst.read()
         .then((result) => {
           expect(result.length).to.equal(1)
-          expect(result[0].email).to.equal(testData.email)
+          expect(result[0].email).to.equal(fixd.postgres.testData.email)
         })
     })
     it('reads specific records when query supplied', () => {
       return inst.read('fname=\'John\'', 1)
         .then((result) => {
           expect(result.length).to.equal(1)
-          expect(result[0].email).to.equal(testData.email)
+          expect(result[0].email).to.equal(fixd.postgres.testData.email)
         })
     })
     it('fails when a bad query is provided', () => {
-      return inst.read('`fart=`knocker')
-        .catch((err) => {
-          expect(err).to.be.an.instanceof(Error)
-        })
+      return expect(inst.read('`')).to.be.rejectedWith(Error)
     })
   })
   describe('update', () => {
