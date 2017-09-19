@@ -18,6 +18,7 @@
   "author": "TechnologyAdvice <devteam@technologyadvice.com>",
   "scripts": {
     "test": "yarn run lint && yarn run cover",
+    "test:watch": "nodemon --exec \"./node_modules/.bin/mocha ./test/src || exit 1\"",
     "clean": "rm -rf ./node_modules rm -rf ./build",
     "mocha": "mocha ./test/src --recursive",
     "cover": "istanbul cover ./node_modules/.bin/_mocha ./test/src",

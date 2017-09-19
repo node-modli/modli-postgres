@@ -26,6 +26,9 @@ tasks:
   test: |
     node ./scripts/postgres_conn.js
     yarn run test
+  test:watch: |
+    node ./scripts/postgres_conn.js
+    yarn run test:watch
   cover: |
     node ./scripts/postgres_conn.js
     yarn run cover
