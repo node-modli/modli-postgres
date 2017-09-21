@@ -1,6 +1,7 @@
 const chai = require('chai')
 const dirtyChai = require('dirty-chai')
 const chaiAsPromised = require('chai-as-promised')
+const chaiSubset = require('chai-subset')
 const mod = require('module')
 const path = require('path')
 const sinon = require('sinon')
@@ -12,11 +13,17 @@ const fixd = require('fixd')
 global.expect = chai.expect
 chai.use(chaiAsPromised)
 chai.use(dirtyChai)
+chai.use(chaiSubset)
 chai.use(sinonChai)
 
 // Sinon
 // ----------------------------------------
 global.sinon = sinon
+global.sandbox = sinon.sandbox.create()
+
+if (global.afterEach) {
+  afterEach(() => global.sandbox.restore())
+}
 
 // Fixd
 // ----------------------------------------
