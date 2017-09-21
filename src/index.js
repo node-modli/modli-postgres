@@ -68,16 +68,20 @@ module.exports = class {
   create (body, version = false) {
     return this.validate(body)
       .then(data => {
+        const res = Object.assign({}, data)
         const vals = []
         const cols = Object.keys(data).reduce((acc, key) => {
+          if (typeof data[key] === 'object' && data[key] !== null) {
+            data[key] = JSON.stringify(data[key])
+          }
           vals.push(`'${data[key]}'`)
           acc.push(key)
           return acc
         }, [])
         const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')})`
         return this.query(query)
-          .then(res => {
-            if (res.rowCount) return data
+          .then(data => {
+            if (data.rowCount) return res
             throw new Error('Unable to create record')
           })
       })
@@ -108,17 +112,26 @@ module.exports = class {
   update (query, body, version = false) {
     return this.validate(body)
       .then(data => {
+        const res = Object.assign({}, data)
         let i = 1
         let changes = ''
         let len = Object.keys(data).length
-        for (let prop in data) {
-          if ({}.hasOwnProperty.call(data, prop)) {
+        for (let key in data) {
+          /* istanbul ignore else: should not happen */
+          if ({}.hasOwnProperty.call(data, key)) {
+            if (typeof data[key] === 'object' && data[key] !== null) {
+              data[key] = JSON.stringify(data[key])
+            }
             let comma = (i !== len) ? ', ' : ''
-            changes += `${prop}='${data[prop]}'${comma}`
+            changes += `${key}='${data[key]}'${comma}`
             i++
           }
         }
         return this.query(`UPDATE ${this.tableName} SET ${changes} WHERE ${query}`)
+          .then(data => {
+            if (data.rowCount) return res
+            throw new Error('Unable to update record(s)')
+          })
       })
   }
 
