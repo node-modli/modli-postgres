@@ -16,8 +16,8 @@ describe('postgres', () => {
   describe('query', () => {
     it('runs a query against the database when connection is good', () => {
       return inst.query('SELECT 1 + 1 AS number')
-        .then((result) => {
-          expect(result.rows[0].number).to.equal(2)
+        .then((res) => {
+          expect(res.rows[0].number).to.equal(2)
         })
     })
     it('fails when invalid query is run', () => {
@@ -33,15 +33,19 @@ describe('postgres', () => {
     })
   })
   describe('create', () => {
+    let data
+    beforeEach(() => {
+      data = Object.assign({}, fixd.postgres.testData)
+    })
     it('creates a new record based on object passed', () => {
-      return inst.create(fixd.postgres.testData)
+      return inst.create(data)
         .then((res) => {
           expect(res).to.containSubset(fixd.postgres.testData)
         })
     })
     it('rejects if record is not created', () => {
       sandbox.stub(inst, 'query').resolves({ rowCount: 0 })
-      return expect(inst.create(fixd.postgres.testData))
+      return expect(inst.create(data))
         .to.be.rejectedWith('Unable to create record')
     })
   })
@@ -66,21 +70,33 @@ describe('postgres', () => {
   })
   describe('update', () => {
     it('updates record(s) based on query and body', () => {
-      return inst.update('fname=\'John\'', {
+      const query = 'fname=\'John\''
+      const body = {
         fname: 'Bob',
         email: 'bsmith@gmail.com'
-      }, 1)
-      .then((result) => {
-        expect(result.command).to.equal('UPDATE')
-        expect(result.rowCount).to.equal(1)
-      })
+      }
+      return inst.update(query, body)
+        .then((res) => {
+          expect(res.fname).to.equal('Bob')
+        })
+    })
+    it('rejects if records are not updated', () => {
+      sandbox.stub(inst, 'query').resolves({ rowCount: 0 })
+      const query = 'fname=\'John\''
+      const body = {
+        fname: 'Bob',
+        email: 'bsmith@gmail.com',
+        address: { city: 'Fakeville' }
+      }
+      return expect(inst.update(query, body))
+        .to.be.rejectedWith('Unable to update record(s)')
     })
   })
   describe('delete', () => {
     it('deletes record(s) based on query', () => {
       return inst.delete('fname=\'Bob\'')
-        .then((result) => {
-          expect(result.rowCount).to.equal(1)
+        .then((res) => {
+          expect(res.rowCount).to.equal(1)
         })
     })
   })
