@@ -27,33 +27,37 @@ describe('postgres', () => {
   describe('createTable', () => {
     it('creates a new table based on object passed (if not exists)', () => {
       return inst.createTable(fixd.postgres.createTable)
-        .then((result) => {
-          expect(result.command).to.equal('CREATE')
+        .then((res) => {
+          expect(res.command).to.equal('CREATE')
         })
     })
   })
   describe('create', () => {
     it('creates a new record based on object passed', () => {
       return inst.create(fixd.postgres.testData)
-        .then((result) => {
-          expect(result.command).to.equal('INSERT')
-          expect(result.rowCount).to.equal(1)
+        .then((res) => {
+          expect(res).to.containSubset(fixd.postgres.testData)
         })
+    })
+    it('rejects if record is not created', () => {
+      sandbox.stub(inst, 'query').resolves({ rowCount: 0 })
+      return expect(inst.create(fixd.postgres.testData))
+        .to.be.rejectedWith('Unable to create record')
     })
   })
   describe('read', () => {
     it('reads all when no query specified', () => {
       return inst.read()
-        .then((result) => {
-          expect(result.length).to.equal(1)
-          expect(result[0].email).to.equal(fixd.postgres.testData.email)
+        .then((res) => {
+          expect(res.length).to.equal(1)
+          expect(res[0].email).to.equal(fixd.postgres.testData.email)
         })
     })
     it('reads specific records when query supplied', () => {
       return inst.read('fname=\'John\'', 1)
-        .then((result) => {
-          expect(result.length).to.equal(1)
-          expect(result[0].email).to.equal(fixd.postgres.testData.email)
+        .then((res) => {
+          expect(res.length).to.equal(1)
+          expect(res[0].email).to.equal(fixd.postgres.testData.email)
         })
     })
     it('fails when a bad query is provided', () => {

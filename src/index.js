@@ -76,6 +76,10 @@ module.exports = class {
         }, [])
         const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')})`
         return this.query(query)
+          .then(res => {
+            if (res.rowCount) return data
+            throw new Error('Unable to create record')
+          })
       })
   }
 
