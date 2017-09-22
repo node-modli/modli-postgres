@@ -1,6 +1,6 @@
 {
   "name": "modli-postgres",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Modli adapter for PostgreSQL",
   "main": "src",
   "repository": {
