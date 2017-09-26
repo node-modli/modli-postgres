@@ -9,8 +9,6 @@ describe('postgres', () => {
     inst.tableName = 'foo'
     // Mock validation method, this is automatically done by the model
     inst.validate = (body) => Promise.resolve(body)
-    // Mock sanitize method, this is automatically done by the model
-    inst.sanitize = (body) => body
   })
   after(() => inst.pg.end())
   describe('query', () => {
@@ -50,9 +48,12 @@ describe('postgres', () => {
     })
   })
   describe('read', () => {
-    it('reads all when no query specified', () => {
+    afterEach(() => { inst.sanitize = null })
+    it('reads all when no query specified, calling existing sanitize method', () => {
+      inst.sanitize = sandbox.spy(body => body)
       return inst.read()
         .then((res) => {
+          expect(inst.sanitize).to.be.calledOnce()
           expect(res.length).to.equal(1)
           expect(res[0].email).to.equal(fixd.postgres.testData.email)
         })
@@ -73,7 +74,8 @@ describe('postgres', () => {
       const query = 'fname=\'John\''
       const body = {
         fname: 'Bob',
-        email: 'bsmith@gmail.com'
+        email: 'bsmith@gmail.com',
+        age: 31
       }
       return inst.update(query, body)
         .then((res) => {

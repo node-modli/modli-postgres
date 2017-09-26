@@ -74,7 +74,7 @@ module.exports = class {
           if (typeof data[key] === 'object' && data[key] !== null) {
             data[key] = JSON.stringify(data[key])
           }
-          vals.push(`'${data[key]}'`)
+          vals.push(typeof data[key] === 'string' ? `'${data[key].replace(/'/g, "''")}'` : data[key])
           acc.push(key)
           return acc
         }, [])
@@ -122,6 +122,7 @@ module.exports = class {
             if (typeof data[key] === 'object' && data[key] !== null) {
               data[key] = JSON.stringify(data[key])
             }
+            if (typeof data[key] === 'string') data[key] = data[key].replace(/'/g, "''")
             let comma = (i !== len) ? ', ' : ''
             changes += `${key}='${data[key]}'${comma}`
             i++
