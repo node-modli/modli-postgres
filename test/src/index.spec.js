@@ -9,7 +9,10 @@ describe('postgres', () => {
     inst.tableName = 'foo'
     // Mock validation method, this is automatically done by the model
     inst.validate = (body) => Promise.resolve(body)
+    return inst.createTable(fixd.postgres.createTable)
   })
+  beforeEach(() => inst.create(Object.assign({}, fixd.postgres.testData)))
+  afterEach(() => inst.query(`TRUNCATE ${inst.tableName}`))
   after(() => inst.pg.end())
   describe('query', () => {
     it('runs a query against the database when connection is good', () => {
@@ -35,10 +38,11 @@ describe('postgres', () => {
     beforeEach(() => {
       data = Object.assign({}, fixd.postgres.testData)
     })
-    it('creates a new record based on object passed', () => {
+    it('creates a new record based on object passed, escaping single quotes in string values', () => {
+      data.fname = "first name's John"
       return inst.create(data)
         .then((res) => {
-          expect(res).to.containSubset(fixd.postgres.testData)
+          expect(res.fname).to.equal('first name\'s John')
         })
     })
     it('rejects if record is not created', () => {
@@ -53,8 +57,7 @@ describe('postgres', () => {
       inst.sanitize = sandbox.spy(body => body)
       return inst.read()
         .then((res) => {
-          expect(inst.sanitize).to.be.calledOnce()
-          expect(res.length).to.equal(1)
+          expect(inst.sanitize).to.be.called()
           expect(res[0].email).to.equal(fixd.postgres.testData.email)
         })
     })
@@ -96,9 +99,9 @@ describe('postgres', () => {
   })
   describe('delete', () => {
     it('deletes record(s) based on query', () => {
-      return inst.delete('fname=\'Bob\'')
+      return inst.delete('fname=\'John\'')
         .then((res) => {
-          expect(res.rowCount).to.equal(1)
+          expect(res.rowCount).to.be.at.least(1)
         })
     })
   })
