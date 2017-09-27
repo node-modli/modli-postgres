@@ -9,6 +9,7 @@ fixd.postgres = {
     fname: 'John',
     lname: 'Smith',
     email: 'jsmith@gmail.com',
+    age: 30,
     address: {
       street: '123 Fake St',
       city: 'Nashville'
@@ -19,6 +20,7 @@ fixd.postgres = {
     fname: [ 'varchar(255)' ],
     lname: [ 'varchar(255)' ],
     email: [ 'varchar(255)' ],
+    age: [ 'integer' ],
     address: [ 'jsonb' ]
   }
 }
