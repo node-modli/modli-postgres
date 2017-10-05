@@ -25,6 +25,15 @@ describe('postgres', () => {
       return expect(inst.query('`')).to.be.rejectedWith(Error)
     })
   })
+  describe('getTable', () => {
+    after(() => {
+      inst.schemaName = null
+    })
+    it('concats tableName with schemaName if the latter exists', () => {
+      inst.schemaName = 'testSchema'
+      expect(inst.getTable()).to.equal('"testSchema"."foo"')
+    })
+  })
   describe('createTable', () => {
     it('creates a new table based on object passed (if not exists)', () => {
       return inst.createTable(fixd.postgres.createTable)
