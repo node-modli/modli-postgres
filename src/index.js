@@ -16,6 +16,10 @@ module.exports = class {
     this.pg = new Pool(config)
   }
 
+  getTable () {
+    return this.schemaName ? `"${this.schemaName}"."${this.tableName}"` : this.tableName
+  }
+
   /**
    * Runs query against instance conn
    * @param {String} query The query to execute
@@ -48,7 +52,7 @@ module.exports = class {
     // Build query
     const len = Object.keys(props).length
     let i = 1
-    let query = `CREATE TABLE IF NOT EXISTS ${this.tableName} (`
+    let query = `CREATE TABLE IF NOT EXISTS ${this.getTable()} (`
     for (let prop in props) {
       let comma = (i !== len) ? ', ' : ''
       query += `${prop} ${props[prop].join(' ')}${comma}`
@@ -78,7 +82,7 @@ module.exports = class {
           acc.push(key)
           return acc
         }, [])
-        const query = `INSERT INTO ${this.tableName} (${cols.join(',')}) VALUES (${vals.join(',')})`
+        const query = `INSERT INTO ${this.getTable()} (${cols.join(',')}) VALUES (${vals.join(',')})`
         return this.query(query)
           .then(data => {
             if (data.rowCount) return res
@@ -94,7 +98,7 @@ module.exports = class {
    */
   read (query, version = false) {
     const where = query ? ` WHERE ${query}` : ''
-    return this.query(`SELECT * FROM ${this.tableName}${where}`)
+    return this.query(`SELECT * FROM ${this.getTable()}${where}`)
       .then((results) => {
         return results.rows.map((r) => {
           return this.sanitize ? this.sanitize(r, version) : r
@@ -128,7 +132,7 @@ module.exports = class {
             i++
           }
         }
-        return this.query(`UPDATE ${this.tableName} SET ${changes} WHERE ${query}`)
+        return this.query(`UPDATE ${this.getTable()} SET ${changes} WHERE ${query}`)
           .then(data => {
             if (data.rowCount) return res
             throw new Error('Unable to update record(s)')
@@ -142,7 +146,7 @@ module.exports = class {
    * @returns {Object} promise
    */
   delete (query) {
-    return this.query(`DELETE FROM ${this.tableName} WHERE ${query}`)
+    return this.query(`DELETE FROM ${this.getTable()} WHERE ${query}`)
   }
 
   /**
